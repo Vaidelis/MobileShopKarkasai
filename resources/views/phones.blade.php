@@ -66,7 +66,7 @@
             <div class="col-md-8" style="color:antiquewhite">
                 <table class="table table-striped" >
                     <thead>
-                    <th>Markė</th>
+                    <th>Leidėjas</th>
                     <th>Modelis</th>
                     <th>Ekrano dydis(Inch)</th>
                     <th>Ramai(GB)</th>
