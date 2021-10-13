@@ -74,6 +74,7 @@
                     <th>Spalva</th>
                     <th>Kaina(USD)</th>
                     <th>Savininkas</th>
+                    <th>Naudojimo metai</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -89,6 +90,7 @@
                                 <td>{{ $post->color }}</td>
                                 <td>{{ $post->price }}</td>
                                 <td>{{ $post->username }}</td>
+                                <td>{{ $post->year }}</td>
                                 <td>
                                     <a href="{{ route('postshow', $post->id) }}" class="butt1">Peržiūrėti</a>
                                 </td>
