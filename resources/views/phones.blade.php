@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div>
+    <div class="top">
         <div class="row justify-content-center">
             <div class="col-md-8" style="color:antiquewhite">
                 <table class="table table-striped" >
@@ -39,14 +39,19 @@
                                 </td>
                             </tr>
                             @endforeach
+
                     </tbody>
+
                 </table>
             </div>
-        </div>
-    </div>
-</div>
 
-</div>
-</body>
-</html>
+        </div>
+
+    </div>
+    {{-- Pagination --}}
+    <div class="d-flex justify-content-center" name="action" value='html'>
+    <div class="bottom">
+        {!! $posts->links() !!}
+    </div>
+    </div>
 @endsection

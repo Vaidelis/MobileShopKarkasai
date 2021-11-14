@@ -12,7 +12,7 @@ class MobileController extends Controller
 {
     public function phones()
     {
-        $posts = Mobile::all();
+        $posts = Mobile::paginate(2);
         return view('phones', compact('posts'));
     }
     public function show($id)

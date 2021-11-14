@@ -47,9 +47,18 @@
     <!--- Navigation -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         @auth
-        <a class="" id="contentLeft">
-            {{ Auth::user()->username }}
-        </a>
+            <ul class="navbar-nav ml-auto">
+
+                <div id="contentLeft" class="top" >
+
+             <a class="nav-link" href="" >{{ Auth::user()->username }}</a>
+                    <ul>
+            <a class="nav-link" href="">Vartotojai</a>
+            <a class="nav-link" href="">Grupės</a>
+                </ul>
+                </div>
+
+            </ul>
         @endauth
         <button class="navbar-toggler" type="buttnon" data-toggle="collapse" data-target="navbarResponsive">
             <span class="navbar-toggler-icon"></span>

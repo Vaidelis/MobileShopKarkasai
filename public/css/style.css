@@ -19,6 +19,14 @@ table{
     position: relative;
     bottom: 0px;
 }
+.top{
+    position: relative;
+}
+.bottom{
+    position: absolute;
+    bottom: 50px;
+}
+
 /*--- Navigation --*/
 
 .navbar{
