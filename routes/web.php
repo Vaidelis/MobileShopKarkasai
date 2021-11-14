@@ -19,3 +19,7 @@ Route::get('/', function () { return view('index');});
 Route::get('/mobiles', 'App\Http\Controllers\MobileController@phones')->name('posts');
 Route::get('/mobiles/show/{id}', 'App\Http\Controllers\MobileController@show')->name('postshow');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

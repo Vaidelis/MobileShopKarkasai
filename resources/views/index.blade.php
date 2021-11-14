@@ -54,8 +54,11 @@
                         <h2>Išskleisti</h2>
                         <div/>
                         <ul>
+                            @guest
+                            <a class="nav-link" href="{{ route('login') }}">Prisijungimas</a>
+                            @endguest
                             <a class="nav-link" href="/">Pagrindinis puslapis</a>
-                            <a class="nav-link" href="mobiles">Telefonai</a>
+                            <a class="nav-link" href="{{route('posts')}}">Telefonai</a>
                             <a class="nav-link" href="">Įsiminti paieškos rezultatai</a>
                             <a class="nav-link" href="#contact">Kontaktai</a>
                         </ul>
