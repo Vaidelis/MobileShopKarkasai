@@ -17,7 +17,7 @@ class MobileController extends Controller
     }
     public function show($id)
     {
-        $post = Mobile::find($id);
-        return view('show', compact('post'));
+        $bookinfo = Mobile::find($id);
+        return view('show', compact('bookinfo'));
     }
 }

@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Telefonų parduotuvė</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-4.1.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/fixed.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-4.1.3-dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/fixed.css')}}">
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            $('#contentLeft ul').hide();
             // čia rašomas JQuery kodas
             $('#contentLeft h2').mouseover(function() { // užvedus pelyte
                 $(this).css('cursor', 'pointer'); // pakeičiamas pelytės žymeklis
@@ -51,10 +52,10 @@
 
                 <div id="contentLeft" class="top" >
 
-             <a class="nav-link" href="" >{{ Auth::user()->username }}</a>
+             <a class="" >{{ Auth::user()->username }}</a>
                     <ul>
-            <a class="nav-link" href="">Vartotojai</a>
-            <a class="nav-link" href="">Grupės</a>
+            <a class="nav-link" href="{{route('usersview')}}">Vartotojai</a>
+            <a class="nav-link" href="{{route('groupview')}}">Grupės</a>
                 </ul>
                 </div>
 
@@ -86,13 +87,17 @@
                             @endguest
                             <a class="nav-link" href="/">Pagrindinis puslapis</a>
                             <a class="nav-link" href="{{route('posts')}}">Telefonai</a>
-                            <a class="nav-link" href="">Įsiminti paieškos rezultatai</a>
+                            <a class="nav-link" href="{{route('book')}}">Įsiminti paieškos rezultatai</a>
                             <a class="nav-link" href="#contact">Kontaktai</a>
                         </ul>
                     </div>
             </ul>
         </ul>
     </nav>
+<div class="inner">
     <main class="py-4">
         @yield('content')
     </main>
+</div>
+</body>
+</html>

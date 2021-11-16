@@ -22,6 +22,11 @@ table{
 .top{
     position: relative;
 }
+.top2{
+    position: relative;
+    bottom: -150px;
+    left: 300px;
+}
 .bottom{
     position: absolute;
     bottom: 50px;

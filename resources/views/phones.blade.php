@@ -22,6 +22,7 @@
                     </thead>
                     <tbody >
                     @foreach($posts as $post)
+                        @if(Auth::user()->username != $post->username)
                             <tr >
                                 <td>{{ $post->brand }}</td>
                                 <td>{{ $post->model }}</td>
@@ -38,6 +39,7 @@
 
                                 </td>
                             </tr>
+                            @endif
                             @endforeach
 
                     </tbody>

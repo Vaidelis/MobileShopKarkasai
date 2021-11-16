@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->string('storagesize');
             $table->string('color');
             $table->integer('price');
+            $table->string('year');
             $table->timestamps();
             $table->string('username');
         });
