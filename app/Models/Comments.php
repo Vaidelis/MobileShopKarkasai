@@ -14,4 +14,9 @@ class Comments extends Model
         'comment', 'Group_id', 'user_username'
     ];
 
+    public function comment()
+    {
+        return $this->belongsToMany(Group::class);
+    }
+
 }

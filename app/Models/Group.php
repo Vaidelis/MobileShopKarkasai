@@ -10,4 +10,9 @@ class Group extends Model
     use HasFactory;
     public $table = "groups";
     public $primaryKey = 'id';
+
+    public function comment()
+    {
+        return $this->belongsToMany(Comments::class);
+    }
 }
