@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->integer('price');
             $table->string('year');
             $table->timestamps();
-            $table->string('username');
+            $table->foreignId('user_id')->constrained();
         });
     }
 

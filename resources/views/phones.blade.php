@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <div class="top">
         <div class="row justify-content-center">
             <div class="col-md-8" style="color:antiquewhite">
@@ -31,7 +32,7 @@
                                 <td>{{ $post->storagesize }}</td>
                                 <td>{{ $post->color }}</td>
                                 <td>{{ $post->price }}</td>
-                                <td>{{ $post->username }}</td>
+                                <td>{{ $post->user->username }}</td>
                                 <td>{{ $post->year }}</td>
                                 <td>
                                     <a href="{{ route('postshow', $post->id) }}" class="butt1">Peržiūrėti</a>
@@ -43,6 +44,15 @@
                             @endforeach
 
                     </tbody>
+                    <tr>
+                    <td>
+                        <a href="{{route('postcreate')}}" class="butt1">Įdėti skelbimą</a>
+                    </td>
+                    </tr>
+                    <td>
+                        <a href="{{route('searchvie')}}" class="butt1">Paieška</a>
+                    </td>
+
 
                 </table>
             </div>

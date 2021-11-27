@@ -23,7 +23,7 @@ class CreateBookmarksTable extends Migration
             $table->integer('pricemin')->nullable();
             $table->integer('pricemax')->nullable();
             $table->timestamps();
-            $table->string('username');
+            $table->foreignId('user_id')->constrained();
         });
     }
 

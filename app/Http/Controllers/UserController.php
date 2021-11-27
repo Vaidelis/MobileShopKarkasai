@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Session;
 use App\Models\Bookmark;
 
 class UserController extends Controller
@@ -21,6 +22,13 @@ class UserController extends Controller
     public function bookshowinfo($id)
     {
         $bookinfo = Bookmark::find($id);
-        return view('show', compact('bookinfo'));
+        return view('bookmarksearch', compact('bookinfo'));
     }
+    public function bookmarkdelete($id){
+        $bookdelete = Bookmark::find($id);
+        $bookdelete->delete();
+        return redirect()->route('book')->with('status', 'Katalogas sėkmingai ištrintas');
+    }
+//Create bookmark
+
 }
