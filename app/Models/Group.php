@@ -11,8 +11,7 @@ class Group extends Model
     public $table = "groups";
     public $primaryKey = 'id';
 
-    public function comment()
-    {
-        return $this->belongsToMany(Comments::class);
+    public function groupshasusers(){
+        return $this->hasMany(GroupsHasUsers::class, 'group_id');
     }
 }

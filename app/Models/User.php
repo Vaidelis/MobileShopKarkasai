@@ -47,4 +47,7 @@ class User extends Authenticatable
     public function bookmarks(){
         return $this->hasMany(Bookmark::class);
     }
+    public function groupshasusers(){
+        return $this->hasMany(GroupsHasUsers::class, 'user_id');
+    }
 }

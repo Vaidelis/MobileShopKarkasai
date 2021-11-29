@@ -55,7 +55,7 @@
              <a class="" >{{ Auth::user()->username }}</a>
                     <ul>
             <a class="nav-link" href="{{route('usersview')}}">Vartotojai</a>
-            <a class="nav-link" href="{{route('groupview')}}">Grupės</a>
+            <a class="nav-link" href="{{route('groupview', Auth::user()->id )}}">Grupės</a>
                 </ul>
                 </div>
 

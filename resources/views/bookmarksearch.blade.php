@@ -21,7 +21,7 @@
             </thead>
             <tbody>
             @foreach($query as $user)
-                @if($user->username != Auth::user()->username)
+                @if($user->user_id != Auth::user()->id)
                     <tr>
                         <td>{{ $user->brand }}</td>
                         <td>{{ $user->model }}</td>
@@ -49,12 +49,17 @@
             <form type='POST' action="{{ route('postbookmark') }}">
                 <div class="form-group">
                     <label style="color:antiquewhite;" class="label">Paieškos rezultatų katalogo pavadinimas: </label>
-                    <input type="text" name="bookmarkn" id="bookmarkn" class="form-control"/>
+                    <input type="text" name="bookmarkn" id="bookmarkn" class="form-control" required/>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Išsaugoti" class="btn btn-success" />
                 </div>
             </form>
+            </div>
+        @else
+
+            <div style="bottom: -80px;" class="alert alert-warning">
+                <p>Toks paieškos rezultatas jau egzistuoja</p>
             </div>
         @endif
 

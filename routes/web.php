@@ -30,12 +30,16 @@ Route::any('/mobiles/search/results', 'App\Http\Controllers\MobileController@sea
 Route::get('/post/search/bookmark', 'App\Http\Controllers\MobileController@bookmark')->name('postbookmark'); //pridėti
 //Bookmarks trynimas
 Route::delete('/bookmarks/delete/{id}', 'App\Http\Controllers\UserController@bookmarkdelete')->name('bookmarkdestroy');
+//Posto trynimas
+Route::delete('/mobiles/delete/{id}', 'App\Http\Controllers\MobileController@mobiledelete')->name('mobilekdestroy');
 //Userio
 Route::get('/users', 'App\Http\Controllers\UserController@usershow')->name('usersview');
 
 //grupės
-Route::get('/groups', 'App\Http\Controllers\GroupController@groupshow')->name('groupview');
+Route::get('/groups/{id}', 'App\Http\Controllers\GroupController@groupshow')->name('groupview');
 Route::get('/groups/groupComments/{id}', 'App\Http\Controllers\GroupController@show')->name('groupshow');
+Route::get('/groups/{id}/{groupid}/join', 'App\Http\Controllers\GroupController@join')->name('groupjoin');
+Route::get('/groups/groupComments/{id}/write/{grouphas}', 'App\Http\Controllers\GroupController@writecomment')->name('postcomment');
 
 //header
 Route::get('/appv2', function() {

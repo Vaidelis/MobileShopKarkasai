@@ -562,6 +562,7 @@ class ComposerStaticInit8b563887e46752e06ef82a9bfec4dd81
         'App\\Models\\Bookmark' => __DIR__ . '/../..' . '/app/Models/Bookmark.php',
         'App\\Models\\Comments' => __DIR__ . '/../..' . '/app/Models/Comments.php',
         'App\\Models\\Group' => __DIR__ . '/../..' . '/app/Models/Group.php',
+        'App\\Models\\GroupsHasUsers' => __DIR__ . '/../..' . '/app/Models/GroupsHasUsers.php',
         'App\\Models\\Mobile' => __DIR__ . '/../..' . '/app/Models/Mobile.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

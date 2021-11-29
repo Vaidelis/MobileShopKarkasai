@@ -14,9 +14,8 @@ class Comments extends Model
         'comment', 'Group_id', 'user_username'
     ];
 
-    public function comment()
-    {
-        return $this->belongsToMany(Group::class);
+    public function groupshasusers(){
+        return $this->belongsTo(GroupsHasUsers::class, 'groups_has_users_id');
     }
 
 }

@@ -2,6 +2,15 @@
 
 @section('content')
 
+    @if (\Session::has('status'))
+        <div style="bottom: -60px;" class="alert alert-warning">
+            <p>{!! \Session::get('status') !!}</p>
+        </div>
+    @elseif(\Session::has('good'))
+        <div class="alert alert-success">
+            <p>{!! \Session::get('good') !!}</p>
+        </div>
+    @endif
 
     <div class="top">
         <div class="row justify-content-center">
@@ -17,7 +26,7 @@
                     <th>Kaina(USD)</th>
                     <th>Savininkas</th>
                     <th>Naudojimo metai</th>
-                    <th></th>
+                    <th>Veiksmai</th>
                     <th></th>
                     <th></th>
                     </thead>
@@ -35,8 +44,23 @@
                                 <td>{{ $post->user->username }}</td>
                                 <td>{{ $post->year }}</td>
                                 <td>
-                                    <a href="{{ route('postshow', $post->id) }}" class="butt1">Peržiūrėti</a>
+                                    <a href="{{ route('postshow', $post->id) }}" class="btn btn-primary">Peržiūrėti</a>
                                 </td>
+
+                                <td>
+                                    @if(Auth::user()->id == $post->user_id)
+                                    <a> {!! Form::open(['action' => ['App\Http\Controllers\MobileController@mobiledelete',$post->id],
+                                'method'=>'POST', 'onsubmit'=> 'return ConfirmDelete()']) !!}
+                                        @csrf
+                                        {{Form::hidden('_method','DELETE')}}
+
+                                        {{Form::submit('Ištrinti', ['class'=>'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+                                    </a>
+                                    @endif
+                                </td>
+
+
 
                                 </td>
                             </tr>
@@ -46,7 +70,7 @@
                     </tbody>
                     <tr>
                     <td>
-                        <a href="{{route('postcreate')}}" class="butt1">Įdėti skelbimą</a>
+                        <a href="{{route('postcreate')}}" class="butt1">Įdėtiskelbimą</a>
                     </td>
                     </tr>
                     <td>

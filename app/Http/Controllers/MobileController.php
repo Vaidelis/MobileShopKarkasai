@@ -91,6 +91,7 @@ class MobileController extends Controller
 
 
 
+
         $query = Mobile::when($search_text, function ($q) use ($search_text) {
             return $q->where('brand', 'like', '%'.$search_text.'%');
         })
@@ -110,14 +111,6 @@ class MobileController extends Controller
                 return $q->where('price', '<=',$search_text5);
             })
             ->paginate(4);
-        switch ($request->input('action')) {
-            case 'html':
-                return view('bookmarksearch', compact('query', 'possible'));
-            case 'json':
-                dd($query);
-            case 'xml':
-                return response()->xml($query);
-        }
         return view('bookmarksearch', compact('query', 'possible'));
     }
     public function bookmark(Request $request){
@@ -141,5 +134,10 @@ class MobileController extends Controller
         $bookssh = Bookmark::all();
 
         return view('bookmarks', compact('bookssh'));
+    }
+    public function mobiledelete($id){
+        $mobile = Mobile::find($id);
+        $mobile->delete();
+        return redirect()->route('posts')->with('status', 'Katalogas sėkmingai ištrintas');
     }
 }

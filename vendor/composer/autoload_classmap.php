@@ -31,6 +31,7 @@ return array(
     'App\\Models\\Bookmark' => $baseDir . '/app/Models/Bookmark.php',
     'App\\Models\\Comments' => $baseDir . '/app/Models/Comments.php',
     'App\\Models\\Group' => $baseDir . '/app/Models/Group.php',
+    'App\\Models\\GroupsHasUsers' => $baseDir . '/app/Models/GroupsHasUsers.php',
     'App\\Models\\Mobile' => $baseDir . '/app/Models/Mobile.php',
     'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
