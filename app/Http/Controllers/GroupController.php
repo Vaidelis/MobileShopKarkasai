@@ -14,14 +14,13 @@ class GroupController extends Controller
     public function groupshow($id)
     {
         $groupssh = Group::all();
-        $grouphasuser = GroupsHasUsers::where(['user_id' => $id])->get()->first();
-        $check = GroupsHasUsers::where(['user_id' => $id])->get()->first();
+        $grouphasuser = GroupsHasUsers::where(['user_id' => $id])->get();
+
+        $check = GroupsHasUsers::where(['user_id' => $id])->first();
         if($check == null){
             $check = null;
         }
-        else {
-            $check = $check->id;
-        }
+
         return view('groups', compact('groupssh', 'grouphasuser'))->with('id', $id)->with('check', $check);
     }
     public function show($id)

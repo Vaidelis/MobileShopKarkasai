@@ -12,27 +12,27 @@
                     <form type='POST' action="{{route('postsearch')}}"  enctype="multipart/form-data">
                         <div class="form-group">
 
-                            <label class="label">Brand: </label>
+                            <label class="label">Leidėjas: </label>
                             <input type="text" name="brand" id="brand" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label class="label">Model: </label>
+                            <label class="label">Modelis: </label>
                             <input type="text" name="model" id="model" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label class="label">Screen size: </label>
+                            <label class="label">Ekrano dydis(pvz. 6.1): </label>
                             <input type="text" name="screensize" id="screensize" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label class="label">RAM size: </label>
+                            <label class="label">RAM(pvz. 2): </label>
                             <input type="text" name="ramsize" id="ramsize" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label class="label">Price(min): </label>
+                            <label class="label">Kaina(min): </label>
                             <input type="text" name="color" id="color" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label class="label">Price(max): </label>
+                            <label class="label">Kaina(max): </label>
                             <input type="text" name="color1" id="color1" class="form-control"/>
                         </div>
                         <div class="form-group">

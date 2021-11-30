@@ -13,7 +13,6 @@
                     <thead>
                     <th>Slapyvardis</th>
                     <th>Komentaras</th>
-                    <th>Veiksmas</th>
                     <th></th>
                     <th></th>
                     </thead>
@@ -24,7 +23,6 @@
                         <tr >
                             <td>{{ $com->groupshasusers->user->username}}</td>
                             <td>{{ $com->comment}}</td>
-                            <td>{{ $com->groupshasusers->group_id}}</td>
                         </tr>
                         </div>
                         @endif

@@ -27,7 +27,7 @@ class UserController extends Controller
     public function bookmarkdelete($id){
         $bookdelete = Bookmark::find($id);
         $bookdelete->delete();
-        return redirect()->route('book')->with('status', 'Katalogas sėkmingai ištrintas');
+        return redirect()->route('book')->with('status', 'Paieškos rezultatų rinkinys sėkmingai ištrintas');
     }
 //Create bookmark
 

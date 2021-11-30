@@ -69,6 +69,7 @@
 
                     </tbody>
                     <tr>
+                        @if(Auth::check())
                     <td>
                         <a href="{{route('postcreate')}}" class="butt1">Įdėtiskelbimą</a>
                     </td>
@@ -76,6 +77,7 @@
                     <td>
                         <a href="{{route('searchvie')}}" class="butt1">Paieška</a>
                     </td>
+                    @endif
 
 
                 </table>

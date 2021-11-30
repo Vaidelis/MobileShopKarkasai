@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('index');});
 
+Route::group(['middleware' => ['auth']], function() {
 //Other people mobile posts
 Route::get('/mobiles', 'App\Http\Controllers\MobileController@phones')->name('posts');
 Route::get('/mobiles/show/{id}', 'App\Http\Controllers\MobileController@show')->name('postshow');
@@ -40,7 +41,7 @@ Route::get('/groups/{id}', 'App\Http\Controllers\GroupController@groupshow')->na
 Route::get('/groups/groupComments/{id}', 'App\Http\Controllers\GroupController@show')->name('groupshow');
 Route::get('/groups/{id}/{groupid}/join', 'App\Http\Controllers\GroupController@join')->name('groupjoin');
 Route::get('/groups/groupComments/{id}/write/{grouphas}', 'App\Http\Controllers\GroupController@writecomment')->name('postcomment');
-
+});
 //header
 Route::get('/appv2', function() {
     return view('layouts.appv2');

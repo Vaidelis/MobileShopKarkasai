@@ -138,6 +138,6 @@ class MobileController extends Controller
     public function mobiledelete($id){
         $mobile = Mobile::find($id);
         $mobile->delete();
-        return redirect()->route('posts')->with('status', 'Katalogas sėkmingai ištrintas');
+        return redirect()->route('posts')->with('status', 'Skelbimas sėkmingai ištrintas');
     }
 }

@@ -56,11 +56,6 @@
                 </div>
             </form>
             </div>
-        @else
-
-            <div style="bottom: -80px;" class="alert alert-warning">
-                <p>Toks paieškos rezultatas jau egzistuoja</p>
-            </div>
         @endif
 
     </div>

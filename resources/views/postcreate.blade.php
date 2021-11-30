@@ -10,32 +10,32 @@
                         <form method="post" action="{{route('poststore')}}" enctype="multipart/form-data">
                             <div class="form-group">
                                 @csrf
-                                <label class="label">Brand: </label>
-                                <input placeholder="Mobile phone brand" type="text" name="brand" class="form-control" required/>
+                                <label class="label">Leidėjas: </label>
+                                <input placeholder="Leidėjas" type="text" name="brand" class="form-control" required/>
                             </div>
                             <div class="form-group">
-                                <label class="label">Model: </label>
-                                <input placeholder="Mobile phone Model" type="text" name="model" class="form-control" required/>
+                                <label class="label">Modelis: </label>
+                                <input placeholder="Telefono modelis" type="text" name="model" class="form-control" required/>
                             </div>
                             <div class="form-group">
-                                <label class="label">Screen size(inches): </label>
-                                <input placeholder="Screen size(ex. 6.1)"  type="text" name="screensize" class="form-control" required/>
+                                <label class="label">Ekrano dydis(inches): </label>
+                                <input placeholder="Ekrano dydis(pvz. 6.1)"  type="text" name="screensize" class="form-control" required/>
                             </div>
                             <div class="form-group">
-                                <label class="label">RAM size(GB): </label>
-                                <input placeholder="RAM size(ex. 2)" type="number" name="ramsize" class="form-control" required/>
+                                <label class="label">RAM(GB): </label>
+                                <input placeholder="RAM(pvz. 2)" type="number" name="ramsize" class="form-control" required/>
                             </div>
                             <div class="form-group">
-                                <label class="label">Storage size(GB): </label>
-                                <input placeholder="Storage size(ex. 64)"  type="number" name="storagesize" class="form-control" required/>
+                                <label class="label">Talpos dydis(GB): </label>
+                                <input placeholder="Talpos dydis(pvz. 64)"  type="number" name="storagesize" class="form-control" required/>
                             </div>
                             <div class="form-group">
-                                <label class="label">Color: </label>
-                                <input placeholder="Color"  type="text" name="color" class="form-control" required/>
+                                <label class="label">Spalva: </label>
+                                <input placeholder="Spalva"  type="text" name="color" class="form-control" required/>
                             </div>
                             <div class="form-group">
-                                <label class="label">Price(USD): </label>
-                                <input placeholder="Price(ex. 500)"  type="number" name="price" class="form-control" required/>
+                                <label class="label">Kaina(USD): </label>
+                                <input placeholder="Kaina(pvz. 500)"  type="number" name="price" class="form-control" required/>
                             </div>
                             <div class="form-group">
                                 <label class="label">Naudojimo laikotarpis: </label>

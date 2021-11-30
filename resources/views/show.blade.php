@@ -8,15 +8,16 @@
                 <table class="table table-striped" >
 
                         <h3>
-                            <p>Mobile phone - <b>{{ $bookinfo->brand }}</b></p>
+                            <p>Telefonas - <b>{{ $bookinfo->brand }}</b></p>
                         </h3>
-                        <p>User - <b>{{ $bookinfo->user->username }}</b></p>
-                        <p>Model - <b>{{ $bookinfo->model }}</b></p>
-                        <p>Screen Size(Inch) - <b>{{ $bookinfo->screensize }}</b></p>
-                        <p>RAM size(GB) - <b>{{ $bookinfo->ramsize }}</b></p>
-                        <p>storage size(GB) - <b>{{ $bookinfo->storagesize }}</b></p>
-                        <p>Color - <b>{{ $bookinfo->color }}</b></p>
-                        <p>Price(USD) - <b>{{ $bookinfo->price }}</b></p>
+                        <p>Savininkas - <b>{{ $bookinfo->user->username }}</b></p>
+                        <p>Modelis - <b>{{ $bookinfo->model }}</b></p>
+                        <p>Ekrano dydis(Inch) - <b>{{ $bookinfo->screensize }}</b></p>
+                        <p>RAM(GB) - <b>{{ $bookinfo->ramsize }}</b></p>
+                        <p>Talpos dydis(GB) - <b>{{ $bookinfo->storagesize }}</b></p>
+                        <p>Spalva - <b>{{ $bookinfo->color }}</b></p>
+                        <p>Kaina(USD) - <b>{{ $bookinfo->price }}</b></p>
+                        <p>Naudojimo laikotarpis(USD) - <b>{{ $bookinfo->year }}</b></p>
 
                         <a href="{{ route('posts') }}" class="btn btn-primary">Atgal</a>
                     </form>

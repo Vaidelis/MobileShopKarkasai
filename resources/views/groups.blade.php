@@ -17,15 +17,22 @@
                     @foreach($groupssh as $group)
                         <tr >
                             <td>{{ $group->name}}</td>
+                             <?php $possible = 0 ?>
+                              <?php $number = 0 ?>
                             @foreach($grouphasuser as $grouphas)
+                                @if($group->id == $grouphas->group_id && $possible == 0)
+                                <?php $possible++ ?>
+                                    <?php $number++ ?>
                             <td>
                                 <a href="{{ route('groupshow', $group->id) }}" class="butt1">Peržiūrėti</a>
                             </td>
+                                @endif
+                            @endforeach
+                            @if($number == 0)
                                 <td>
                                     <a href="{{ route('groupjoin', ['id' => Auth::user()->id, 'groupid' => $group->id]) }}" class="butt1">Prisijungti</a>
                                 </td>
-
-                            @endforeach
+                            @endif
                             @if($check == null)
                                 <td>
                                     <a href="{{ route('groupjoin', ['id' => Auth::user()->id, 'groupid' => $group->id]) }}" class="butt1">Prisijungti</a>
