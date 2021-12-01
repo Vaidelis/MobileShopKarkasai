@@ -13,7 +13,14 @@ class MobileController extends Controller
 {
     public function phones()
     {
-        $posts = Mobile::paginate(2);
+        if(!Auth::check()){
+            $posts = Mobile::paginate(2)->take(2);
+        }
+
+        else {
+            $posts = Mobile::paginate(2);
+        }
+        //dd($posts);
         return view('phones', compact('posts'));
     }
     public function show($id)

@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () { return view('index');});
-
+Route::get('/mobiles', 'App\Http\Controllers\MobileController@phones')->name('posts');
 Route::group(['middleware' => ['auth']], function() {
 //Other people mobile posts
-Route::get('/mobiles', 'App\Http\Controllers\MobileController@phones')->name('posts');
+
 Route::get('/mobiles/show/{id}', 'App\Http\Controllers\MobileController@show')->name('postshow');
 //Posto sukūrimas
 Route::get('/mobiles/create', 'App\Http\Controllers\MobileController@create')->name('postcreate');

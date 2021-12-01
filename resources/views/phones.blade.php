@@ -32,7 +32,20 @@
                     </thead>
                     <tbody >
                     @foreach($posts as $post)
-                        @if(Auth::user()->username != $post->username)
+                        @php $twoposts = 0; @endphp
+                        @if(!Auth::check())
+                            <tr >
+                                <td>{{ $post->brand }}</td>
+                                <td>{{ $post->model }}</td>
+                                <td>{{ $post->screensize }}</td>
+                                <td>{{ $post->ramsize }}</td>
+                                <td>{{ $post->storagesize }}</td>
+                                <td>{{ $post->color }}</td>
+                                <td>{{ $post->price }}</td>
+                                <td>{{ $post->user->username }}</td>
+                                <td>{{ $post->year }}</td>
+                            <tr >
+                        @elseif(Auth::user()->id == $post->user_id)
                             <tr >
                                 <td>{{ $post->brand }}</td>
                                 <td>{{ $post->model }}</td>
@@ -87,9 +100,11 @@
 
     </div>
     {{-- Pagination --}}
+    @if(Auth::check())
     <div class="d-flex justify-content-center" name="action" value='html'>
     <div class="bottom">
         {!! $posts->links() !!}
     </div>
     </div>
+    @endif
 @endsection
