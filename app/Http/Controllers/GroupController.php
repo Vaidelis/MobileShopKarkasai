@@ -56,4 +56,26 @@ class GroupController extends Controller
         $newcomments->save();
         return redirect()->route('groupshow', $grouphas);
     }
+
+    //Komentarų update
+    public function edit($id){
+
+        $comment = Comments::find($id);
+
+        return view('editComment',compact('comment')); //->with('messages','id');
+    }
+
+    public function update(Request $request, $id){
+
+        $comment= $request->get('comment');
+
+        Comments::where('id',$id)->update(['comment' => $comment]);
+
+        $groupid = Comments::find($id);
+        //dd($groupid);
+        $groupid = $groupid->groupshasusers->group->id;
+
+        //$comments = Comments::find($id);
+        return redirect()->route('groupshow', $groupid);
+    }
 }

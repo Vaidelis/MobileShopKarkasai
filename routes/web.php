@@ -35,7 +35,12 @@ Route::delete('/bookmarks/delete/{id}', 'App\Http\Controllers\UserController@boo
 Route::delete('/mobiles/delete/{id}', 'App\Http\Controllers\MobileController@mobiledelete')->name('mobilekdestroy');
 //Userio
 Route::get('/users', 'App\Http\Controllers\UserController@usershow')->name('usersview');
+//Redagavimas
+Route::get('/mobiles/show/{id}/edit', 'App\Http\Controllers\MobileController@edit')->name('mobileedit');
+Route::match(['put','patch'],'{id}/edit', 'App\Http\Controllers\MobileController@update')->name('mobileupdate');
 
+    Route::get('/groups/groupComments/{id}/editCom', 'App\Http\Controllers\GroupController@edit')->name('comedit');
+    Route::match(['put','patch'],'{id}/editCom', 'App\Http\Controllers\GroupController@update')->name('comupdate');
 //grupės
 Route::get('/groups/{id}', 'App\Http\Controllers\GroupController@groupshow')->name('groupview');
 Route::get('/groups/groupComments/{id}', 'App\Http\Controllers\GroupController@show')->name('groupshow');

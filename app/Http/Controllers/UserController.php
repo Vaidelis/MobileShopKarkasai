@@ -29,6 +29,6 @@ class UserController extends Controller
         $bookdelete->delete();
         return redirect()->route('book')->with('status', 'Paieškos rezultatų rinkinys sėkmingai ištrintas');
     }
-//Create bookmark
+
 
 }

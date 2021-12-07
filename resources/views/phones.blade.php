@@ -32,7 +32,6 @@
                     </thead>
                     <tbody >
                     @foreach($posts as $post)
-                        @php $twoposts = 0; @endphp
                         @if(!Auth::check())
                             <tr >
                                 <td>{{ $post->brand }}</td>
@@ -45,7 +44,7 @@
                                 <td>{{ $post->user->username }}</td>
                                 <td>{{ $post->year }}</td>
                             <tr >
-                        @elseif(Auth::user()->id == $post->user_id)
+                        @else
                             <tr >
                                 <td>{{ $post->brand }}</td>
                                 <td>{{ $post->model }}</td>

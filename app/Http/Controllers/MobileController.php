@@ -147,4 +147,48 @@ class MobileController extends Controller
         $mobile->delete();
         return redirect()->route('posts')->with('status', 'Skelbimas sėkmingai ištrintas');
     }
+
+    public function edit($id){
+
+        $mobile = Mobile::find($id);
+        //$question = Question::where([ 'test_idTest' => $id]);
+
+        return view('edit',compact('mobile')); //->with('messages','id');
+    }
+    public function update(Request $request,$id){
+
+        $this->validate($request, [
+            'brand' => 'required',
+            'model' => 'required',
+            'screensize' => 'required',
+            'ramsize' => 'required',
+            'storagesize' => 'required',
+            'color' => 'required',
+            'price' => 'required',
+            'year' => 'required'
+
+        ]);
+        $mobile = Mobile::findOrFail($id);
+        $brand = $request->input('brand');
+        $model = $request->input('model');
+        $screensize = $request->input('screensize');
+        $ramsize = $request->input('ramsize');
+        $storagesize = $request->input('storagesize');
+        $color = $request->input('color');
+        $price = $request->input('price');
+        $year = $request->input('year');
+
+        $mobile->brand = $brand;
+        $mobile->model = $model;
+        $mobile->screensize = $screensize;
+        $mobile->ramsize = $ramsize;
+        $mobile->storagesize = $storagesize;
+        $mobile->color = $color;
+        $mobile->price = $price;
+        $mobile->year = $year;
+
+
+        $mobile->save();
+        return redirect()->route('posts')->with('status','Telefono informacija atnaujinta');
+    }
 }

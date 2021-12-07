@@ -20,6 +20,9 @@
                         <p>Naudojimo laikotarpis(USD) - <b>{{ $bookinfo->year }}</b></p>
 
                         <a href="{{ route('posts') }}" class="btn btn-primary">Atgal</a>
+                    @if($bookinfo->user_id == Auth::User()->id)
+                    <a href="{{ route('mobileedit', $bookinfo->id) }}" class="btn btn-info">Redaguoti</a>
+                    @endif
                     </form>
         </table>
                 </div>
