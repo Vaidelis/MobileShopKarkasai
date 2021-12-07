@@ -8,7 +8,7 @@
                 <div class="form-group" style="display: flex; flex-direction: column" >
                     <table style="bottom: -50px"> <th>{{$groupname->group->name}}</th></table>
 
-                <table class="table table-striped" style="top: -90px">
+                <table class="table table-striped" style="top: 40px">
 
                     <thead>
                     <th>Slapyvardis</th>
