@@ -43,12 +43,12 @@ class UserController extends Controller
         return redirect()->route('usersview');
     }
 
-    //Komentarų update
+    //Role update
     public function editrole($id){
 
         $rol = Role::find($id);
 
-        return view('roledit',compact('rol')); //->with('messages','id');
+        return view('roledit',compact('rol'));
     }
 
     public function update(Request $request, $id){
