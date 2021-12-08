@@ -33,17 +33,14 @@
                                     <a href="{{ route('groupjoin', ['id' => Auth::user()->id, 'groupid' => $group->id]) }}" class="butt1">Prisijungti</a>
                                 </td>
                             @endif
-                            @if($check == null)
-                                <td>
-                                    <a href="{{ route('groupjoin', ['id' => Auth::user()->id, 'groupid' => $group->id]) }}" class="butt1">Prisijungti</a>
-                                </td>
-                            @endif
+
                         </tr>
                     @endforeach
 
                     </tbody>
 
                 </table>
+
             </div>
 
         </div>

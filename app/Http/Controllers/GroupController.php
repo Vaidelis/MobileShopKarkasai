@@ -78,4 +78,18 @@ class GroupController extends Controller
         //$comments = Comments::find($id);
         return redirect()->route('groupshow', $groupid);
     }
+    public function leave($id){
+        $coms = Comments::where('groups_has_users_id', $id);
+        $coms->delete();
+        $group = GroupsHasUsers::find($id);
+        $group->delete();
+        return redirect()->route('groupview', Auth::User()->id)->with('status', 'Išeita sekmingai');
+    }
+    public function groupcreate(Request $request){
+        $newrole = new Group();
+        $newrole->name = $request->get('group');
+        $newrole->save();
+        return redirect()->route('groupview', Auth::User()->id)->with('status', 'Grupė sukurta');
+    }
+
 }

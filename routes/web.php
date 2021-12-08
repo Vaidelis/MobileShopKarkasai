@@ -35,6 +35,12 @@ Route::delete('/bookmarks/delete/{id}', 'App\Http\Controllers\UserController@boo
 Route::delete('/mobiles/delete/{id}', 'App\Http\Controllers\MobileController@mobiledelete')->name('mobilekdestroy');
 //Userio
 Route::get('/users', 'App\Http\Controllers\UserController@usershow')->name('usersview');
+Route::get('/users/createrole', 'App\Http\Controllers\UserController@createrole')->name('rolecreate');
+
+Route::delete('/users/delete/{id}', 'App\Http\Controllers\UserController@deleterole')->name('roledelete');
+
+Route::get('/users/edit/{id}', 'App\Http\Controllers\UserController@editrole')->name('roleedit');
+Route::match(['put','patch'],'{id}/editrle', 'App\Http\Controllers\UserController@update')->name('coleupdate');
 //Redagavimas
 Route::get('/mobiles/show/{id}/edit', 'App\Http\Controllers\MobileController@edit')->name('mobileedit');
 Route::match(['put','patch'],'{id}/edit', 'App\Http\Controllers\MobileController@update')->name('mobileupdate');
@@ -46,6 +52,9 @@ Route::get('/groups/{id}', 'App\Http\Controllers\GroupController@groupshow')->na
 Route::get('/groups/groupComments/{id}', 'App\Http\Controllers\GroupController@show')->name('groupshow');
 Route::get('/groups/{id}/{groupid}/join', 'App\Http\Controllers\GroupController@join')->name('groupjoin');
 Route::get('/groups/groupComments/{id}/write/{grouphas}', 'App\Http\Controllers\GroupController@writecomment')->name('postcomment');
+
+Route::delete('/group/groupcomments/leave/{id}', 'App\Http\Controllers\GroupController@leave')->name('groupleave');
+Route::get('/groups/create', 'App\Http\Controllers\GroupController@groupcreate')->name('groupcreate');
 });
 //header
 Route::get('/appv2', function() {

@@ -6,8 +6,14 @@
         <div class="row justify-content-center" >
             <div class="col-md-8" style="color:antiquewhite">
                 <div class="form-group" style="display: flex; flex-direction: column" >
-                    <table style="bottom: -50px"> <th>{{$groupname->group->name}}</th></table>
-
+                    <table style="bottom: -50px; right: -100px"> <th>{{$groupname->group->name}}</th></table>
+                    <div style="top: -50px">
+                    <form action="{{ route('groupleave', $groupname->id) }}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-outline-danger">Išeiti</button>
+                    </form>
+                </div>
                 <table class="table table-striped" style="top: 40px">
 
                     <thead>
